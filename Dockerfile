@@ -10,7 +10,6 @@ COPY . /go/src/github.com/chihaya/chihaya
 
 # Install our golang dependencies and compile our binary.
 RUN go mod tidy
-RUN go get -t .
 RUN CGO_ENABLED=0 go install ./cmd/chihaya
 
 FROM alpine:latest
